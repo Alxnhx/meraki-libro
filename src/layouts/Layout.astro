@@ -335,17 +335,16 @@ const { title = 'Meraki · Pedagogía' } = Astro.props;
 .contact-widget {
   margin-top: 1.5rem;
 }
-
 .contact-widget-inner {
   position: relative;
   border-radius: 1.1rem;
   padding: 2px;
-  background: linear-gradient(130deg, var(--meraki-pink), var(--meraki-blue));
+  background: linear-gradient(130deg, var(--meraki-pink), var(--meraki-blue));  /* Fondo más suave y armónico */
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
 }
 
 .contact-chat {
-  background-color: var(--meraki-bg);
+  background: var(--meraki-hero); /* Usa el tono crema claro de la paleta */
   border-radius: 1rem;
   padding: 0.85rem;
   display: flex;
@@ -358,8 +357,8 @@ const { title = 'Meraki · Pedagogía' } = Astro.props;
   height: 70px;
   border-radius: 0.9rem;
   border: 1px solid rgba(148, 163, 184, 0.6);
-  background: var(--meraki-hero);  /* Color crema */
-  color: #e5e7eb;
+  background: var(--meraki-hero);  /* Cambia el fondo a un tono crema más suave */
+  color: #333;  /* Un color de texto más oscuro para mejor contraste */
   font-size: 0.82rem;
   padding: 0.6rem 0.75rem;
   resize: none;
@@ -432,6 +431,7 @@ const { title = 'Meraki · Pedagogía' } = Astro.props;
   margin-top: 0.5rem;
   font-size: 0.75rem;
   color: #64748b;
+  text-align: center; /* Centramos el texto */
 }
 
 /* ---------- SOCIAL ICONS ---------- */
