@@ -1385,3 +1385,303 @@ button.learn-more:active::before {
   cursor: not-allowed;
   box-shadow: none;
 }
+/* ===========================
+   NAVBAR ROSA FLOANTE (derecha)
+   =========================== */
+.meraki-fab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #ff5fa9, #ff8ad3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(255, 0, 120, 0.4);
+}
+
+.meraki-fab-item {
+  position: relative;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.4rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.25s ease;
+}
+
+.meraki-fab-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meraki-fab-item::after {
+  content: attr(data-label);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateX(-6px);
+  max-width: 0;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.meraki-fab-item:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.meraki-fab-item:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+  max-width: 6rem;
+}
+
+/* ===========================
+   TRANSICIONES DE SECCIÓN (ondas)
+   =========================== */
+.meraki-wave {
+  width: 100%;
+  height: 70px;
+}
+
+.meraki-wave-hero {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  background: radial-gradient(circle at 50% 0, #fff5e7 0, #fff5e7 50%, transparent 52%);
+}
+
+.meraki-wave-cream-to-blue {
+  background: linear-gradient(to bottom, #fff5e7 0, #fff5e7 40%, #cfe7ff 41%);
+}
+
+.meraki-wave-blue-to-green {
+  background: linear-gradient(to bottom, #cfe7ff 0, #cfe7ff 40%, #ccefd3 41%);
+}
+
+/* ===========================
+   FLIPBOOK – aspecto libro real
+   =========================== */
+.book-container {
+  perspective: 1600px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.book-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 65%; /* relación 16:10 aprox. */
+  border-radius: 24px;
+  background: linear-gradient(to right, #e6e0d4, #fef9f2 16%, #fef9f2 84%, #e6e0d4);
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.2);
+  overflow: hidden;
+}
+
+.book-page {
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  width: 46%;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #fff7e7;
+  box-shadow: 0 0 10px rgba(15, 23, 42, 0.1);
+}
+
+.left-page {
+  left: 4%;
+  border-radius: 18px 0 0 18px;
+}
+
+.right-page {
+  right: 4%;
+  border-radius: 0 18px 18px 0;
+}
+
+/* línea central */
+.book-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.04));
+  mix-blend-mode: multiply;
+}
+
+/* Página que se anima al voltear */
+.flip-element {
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  width: 46%;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #fff7e7;
+  box-shadow: 0 0 25px rgba(15, 23, 42, 0.35);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: none;
+}
+
+.flip-element.is-active {
+  display: block;
+}
+
+.flip-element.is-flipping-next {
+  left: 50%;
+  transform-origin: left center;
+  animation: meraki-flip-next 0.7s ease forwards;
+}
+
+.flip-element.is-flipping-prev {
+  left: 4%;
+  transform-origin: right center;
+  animation: meraki-flip-prev 0.7s ease forwards;
+}
+
+@keyframes meraki-flip-next {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes meraki-flip-prev {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Botones de navegación del libro */
+.nav-button {
+  padding: 0.7rem 2.2rem;
+  border-radius: 999px;
+  border: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+  background: #1e293b;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.5);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.4);
+}
+
+/* Responsive: libro más bajito en móvil */
+@media (max-width: 768px) {
+  .book-wrapper {
+    padding-top: 120%;
+  }
+}
+
+/* ===========================
+   CARD DESCARGA (sin chocar con .btn SPACE)
+   =========================== */
+.download-card {
+  width: 100%;
+  border-radius: 16px;
+  background: rgba(126, 34, 206, 0.06);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-card::before {
+  content: '';
+  height: 110px;
+  width: 110px;
+  position: absolute;
+  top: -45%;
+  left: -25%;
+  border-radius: 50%;
+  border: 36px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.8s ease;
+  filter: blur(0.5rem);
+}
+
+.download-card-text {
+  flex-grow: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  color: #111827;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.download-card-subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(15, 23, 42, 0.7);
+}
+
+.download-card-actions {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+}
+
+.download-card-btn {
+  border: none;
+  width: 50%;
+  height: 40px;
+  background-color: rgba(248, 250, 252, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-card-icon {
+  width: 22px;
+  height: 22px;
+  stroke: rgb(30, 64, 175);
+}
+
+.download-card-btn:hover {
+  background-color: #ffffff;
+}
+
+.download-card:hover::before {
+  width: 150px;
+  height: 150px;
+  top: -30%;
+  left: 40%;
+  filter: blur(0);
+}

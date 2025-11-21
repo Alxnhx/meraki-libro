@@ -6,20 +6,17 @@ import Layout from '../layouts/Layout.astro';
   <!-- HERO -->
   <section
     id="hero"
-    class="relative overflow-hidden bg-gradient-to-b from-meraki-blue via-meraki-green to-meraki-cream pb-24 pt-20 lg:pt-24"
+    class="relative overflow-hidden bg-gradient-to-b from-[#e1cdbd] via-[#f7e7d7] to-[#fff5e7] pb-24 pt-20 lg:pt-24"
   >
-    <div class="absolute inset-x-0 top-10 flex justify-center opacity-50">
-      <div
-        class="h-32 w-[110%] rounded-[50%] bg-white/40 blur-3xl"
-      ></div>
-    </div>
+    <!-- onda suave abajo del hero -->
+    <div class="meraki-wave meraki-wave-hero"></div>
 
     <div
       class="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 lg:flex-row lg:items-center lg:px-0"
     >
       <div class="flex-1 space-y-4">
         <p
-          class="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-500 shadow-sm"
+          class="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm"
         >
           Glosario · Libro interactivo · Colaborativo
         </p>
@@ -32,21 +29,23 @@ import Layout from '../layouts/Layout.astro';
         </h1>
 
         <p class="max-w-xl text-base text-slate-700">
-          Un espacio digital pensado para
-          <strong>pedagogas y psicopedagogas</strong> que desean explorar
-          conceptos clave, navegar un <strong>libro interactivo</strong> y
+          Un espacio digital pensado para <strong>pedagogas y
+          psicopedagogas</strong> que desean explorar conceptos clave, navegar
+          un <strong>libro interactivo</strong> y
           <strong>agregar sus propias hojas</strong> para enriquecer la
           propuesta.
         </p>
 
         <div class="mt-4 flex flex-wrap items-center gap-4">
-          <!-- Botón tipo learn-more -->
-          <a href="#info" class="learn-more">
+          <button class="learn-more">
             Explorar glosario
-          </a>
+          </button>
 
-          <!-- Botón espacial para ir al libro -->
-          <a href="#libro" class="btn">
+          <button
+            type="button"
+            class="btn"
+            onclick="window.location.hash = '#libro'"
+          >
             <strong>VER LIBRO</strong>
             <div id="container-stars">
               <div id="stars"></div>
@@ -55,13 +54,12 @@ import Layout from '../layouts/Layout.astro';
               <div class="circle"></div>
               <div class="circle"></div>
             </div>
-          </a>
+          </button>
         </div>
 
-        <!-- Estrellitas de rating -->
         <div class="mt-4">
           <p
-            class="mb-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-slate-500"
+            class="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500"
           >
             Valoración de docentes
           </p>
@@ -70,78 +68,22 @@ import Layout from '../layouts/Layout.astro';
             <label title="Muy útil" for="star5"></label>
             <input value="4" name="rate" id="star4" type="radio" />
             <label title="Útil" for="star4"></label>
-            <input
-              value="3"
-              name="rate"
-              id="star3"
-              type="radio"
-              checked
-            />
+            <input value="3" name="rate" id="star3" type="radio" checked />
             <label title="En prueba" for="star3"></label>
             <input value="2" name="rate" id="star2" type="radio" />
             <label title="Regular" for="star2"></label>
             <input value="1" name="rate" id="star1" type="radio" />
-            <label title="Queda por mejorar" for="star1"></label>
+            <label title="Por mejorar" for="star1"></label>
           </div>
         </div>
       </div>
 
-      <!-- Imagen / mockup del libro -->
+      <!-- Loader / mockup libro -->
       <div class="flex-1">
         <div
-          class="relative mx-auto max-w-md rounded-[2.5rem] bg-white/80 p-4 shadow-xl"
+          class="relative mx-auto max-w-md rounded-[2.5rem] bg-white/90 p-4 shadow-xl"
         >
-          <!-- Loader completo -->
-          <div class="loader mx-auto">
-            <div>
-              <ul>
-                <li>
-                  <svg fill="currentColor" viewBox="0 0 90 120">
-                    <path
-                      d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
-                    ></path>
-                  </svg>
-                </li>
-                <li>
-                  <svg fill="currentColor" viewBox="0 0 90 120">
-                    <path
-                      d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
-                    ></path>
-                  </svg>
-                </li>
-                <li>
-                  <svg fill="currentColor" viewBox="0 0 90 120">
-                    <path
-                      d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
-                    ></path>
-                  </svg>
-                </li>
-                <li>
-                  <svg fill="currentColor" viewBox="0 0 90 120">
-                    <path
-                      d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
-                    ></path>
-                  </svg>
-                </li>
-                <li>
-                  <svg fill="currentColor" viewBox="0 0 90 120">
-                    <path
-                      d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
-                    ></path>
-                  </svg>
-                </li>
-                <li>
-                  <svg fill="currentColor" viewBox="0 0 90 120">
-                    <path
-                      d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
-                    ></path>
-                  </svg>
-                </li>
-              </ul>
-            </div>
-            <span>Loading</span>
-          </div>
-
+          <div class="loader mx-auto"></div>
           <p class="mt-4 text-center text-xs text-slate-500">
             Cargando vista previa del libro interactivo…
           </p>
@@ -150,266 +92,270 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- SECCIÓN INFORMACIÓN -->
-  <section id="info" class="mx-auto max-w-6xl px-4 py-16 lg:px-0">
-    <div class="mx-auto mb-10 max-w-3xl text-center">
-      <p
-        class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500"
-      >
-        Contexto del proyecto
-      </p>
-      <h2 class="mt-2 text-3xl font-bold text-slate-900">
-        Información clave del glosario y la investigación
-      </h2>
-      <p class="mt-3 text-sm text-slate-600">
-        Basado en un artículo de investigación sobre
-        <strong>aprendizaje multisensorial</strong> y
-        <strong>psicopedagogía</strong>, este sitio resume los hallazgos
-        principales y los transforma en un recurso práctico para el aula de
-        secundaria.
-      </p>
-    </div>
-
-    <div class="grid gap-6 md:grid-cols-3">
-      <!-- Card 1 -->
-      <a
-        href="/detalle/psicopedagogia"
-        class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-md"
-      >
-        <h3 class="font-display text-lg font-semibold text-slate-900">
-          ¿Qué es la Psicopedagogía?
-        </h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Disciplina que integra psicología y educación para comprender cómo
-          aprenden las personas, detectar barreras y proponer apoyos
-          específicos.
-        </p>
-      </a>
-
-      <!-- Card 2 -->
-      <a
-        href="/detalle/psicopedagogia"
-        class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-md"
-      >
-        <h3 class="font-display text-lg font-semibold text-slate-900">
-          Enfoque del glosario
-        </h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Cada término está pensado para ser
-          <strong>claro, aplicable</strong> y conectado con situaciones reales
-          del aula, especialmente en educación secundaria.
-        </p>
-      </a>
-
-      <!-- Card 3 -->
-      <a
-        href="/detalle/psicopedagogia"
-        class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-md"
-      >
-        <h3 class="font-display text-lg font-semibold text-slate-900">
-          Libro como herramienta
-        </h3>
-        <p class="mt-2 text-sm text-slate-600">
-          El libro interactivo funciona como un
-          <strong>manual digital</strong> que puede ampliarse con nuevas hojas
-          creadas por docentes según su contexto.
-        </p>
-      </a>
-    </div>
-  </section>
-
-   <!-- SECCIÓN LIBRO INTERACTIVO -->
-  <section id="libro" class="py-16">
-    <!-- bloque azul con bordes suaves tipo playground -->
-    <div class="section-bg-soft-blue">
-      <div
-        class="mx-auto max-w-6xl px-4 py-14 lg:px-0 section-rounded-shell bg-white/60"
-      >
-        <div class="mx-auto mb-10 max-w-3xl text-center">
-          <p
-            class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-600"
-          >
-            Libro interactivo
-          </p>
-          <h2 class="mt-2 text-3xl font-bold text-slate-900">
-            Manual digital de Psicopedagogía Interactiva
-          </h2>
-          <p class="mt-3 text-sm text-slate-700">
-            Aquí vivirán las páginas en formato imagen (1.jpeg, 2.jpeg, …)
-            organizadas como un
-            <strong>flipbook</strong> navegable. Ya dejamos listo el contenedor
-            para conectar la lógica en JavaScript.
-          </p>
-        </div>
-
-        <div class="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-          <!-- Contenedor del libro -->
-          <div class="rounded-[2.5rem] bg-white/95 p-6 shadow-xl">
-            <div
-              class="book-container relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-slate-50 shadow-inner"
-            >
-              <div
-                class="flip-book flex aspect-[4/3] w-full items-stretch justify-center"
-              >
-                <img
-                  data-page="left"
-                  src="/items/1.jpeg"
-                  alt="Página izquierda"
-                  class="book-page-img"
-                />
-                <img
-                  data-page="right"
-                  src="/items/2.jpeg"
-                  alt="Página derecha"
-                  class="book-page-img"
-                />
-              </div>
-            </div>
-
-            <div class="mt-6 flex justify-center gap-4">
-              <button id="btnPrev" class="nav-button">
-                Anterior
-              </button>
-              <button id="btnNext" class="nav-button">
-                Siguiente
-              </button>
-            </div>
-          </div>
-
-          <!-- Lado derecho: descarga + compartir -->
-          <div class="space-y-6">
-            <!-- Card de descarga -->
-            <div class="card">
-              <div class="text">
-                <span>Manual digital completo</span>
-                <p class="subtitle">
-                  Descarga el PDF con todas las páginas del libro para imprimir
-                  o trabajar sin conexión.
-                </p>
-              </div>
-              <div class="icons">
-                <a class="btn" href="#">
-                  <!-- Icono descarga -->
-                  <svg
-                    y="0"
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0"
-                    width="100"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="xMidYMid meet"
-                    height="100"
-                    class="svg-icon"
-                  >
-                    <path
-                      stroke-width="8"
-                      stroke-linejoin="round"
-                      stroke-linecap="round"
-                      fill="none"
-                      d="M31.8,64.5a14.5,14.5,0,0,1-3.2-28.7,17.5,17.5,0,0,1-.4-4,18.2,18.2,0,0,1,36-3.6h.3a18.2,18.2,0,0,1,3.7,36M39.1,75.4,50,86.3m0,0L60.9,75.4M50,86.3V42.7"
-                    ></path>
-                  </svg>
-                </a>
-                <a class="btn" href="#">
-                  <!-- Icono link -->
-                  <svg class="svg-icon" viewBox="0 0 20 20">
-                    <path
-                      d="M4.317,16.411c-1.423-1.423-1.423-3.737,0-5.16l8.075-7.984c0.994-0.996,2.613-0.996,3.611,0.001C17,4.264,17,5.884,16.004,6.88l-8.075,7.984c-0.568,0.568-1.493,0.569-2.063-0.001c-0.569-0.569-0.569-1.495,0-2.064L9.93,8.828c0.145-0.141,0.376-0.139,0.517,0.005c0.141,0.144,0.139,0.375-0.006,0.516l-4.062,3.968c-0.282,0.282-0.282,0.745,0.003,1.03c0.285,0.284,0.747,0.284,1.032,0l8.074-7.985c0.711-0.71,0.711-1.868-0.002-2.579c-0.711-0.712-1.867-0.712-2.58,0l-8.074,7.984c-1.137,1.137-1.137,2.988,0.001,4.127c1.14,1.14,2.989,1.14,4.129,0l6.989-6.896c0.143-0.142,0.375-0.14,0.516,0.003c0.143,0.143,0.141,0.374-0.002,0.516l-6.988,6.895C8.054,17.836,5.743,17.836,4.317,16.411"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- Botón share fancy -->
-            <div class="tooltip-container">
-              <div class="button-content">
-                <span class="text">Compartir libro</span>
-                <svg
-                  class="share-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                >
-                  <path
-                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="tooltip-content">
-                <div class="social-icons">
-                  <!-- aquí luego conectamos twitter / facebook / linkedin -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN COLABORAR -->
-  <section id="colabora" class="mx-auto max-w-6xl px-4 py-16 lg:px-0">
-    <div
-      class="grid gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] items-start"
-    >
-      <div>
+  <!-- BLOQUE CREMA (INFO) -->
+  <section
+    id="info"
+    class="relative z-10 -mt-10 rounded-t-[3rem] bg-[#fff5e7] pb-16 pt-14"
+  >
+    <div class="mx-auto max-w-6xl px-4 lg:px-0">
+      <div class="mx-auto mb-10 max-w-3xl text-center">
         <p
           class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500"
         >
-          Colaboración docente
+          Contexto del proyecto
         </p>
         <h2 class="mt-2 text-3xl font-bold text-slate-900">
-          Agrega nuevas hojas al libro interactivo
+          Información clave del glosario y la investigación
         </h2>
         <p class="mt-3 text-sm text-slate-600">
-          La idea es que el glosario y el libro sean
-          <strong>vivos</strong>. Cada docente puede proponer nuevas páginas con
-          actividades, ejemplos de casos, rúbricas o adaptaciones curriculares.
-        </p>
-        <p class="mt-2 text-sm text-slate-600">
-          Más adelante esta sección podrá conectarse con un formulario o una
-          base de datos para subir directamente las hojas y aprobarlas desde la
-          coordinación.
+          Basado en un artículo de investigación sobre
+          <strong>aprendizaje multisensorial</strong> y
+          <strong>psicopedagogía</strong>, este sitio resume los hallazgos
+          principales y los transforma en un recurso práctico para el aula de
+          secundaria.
         </p>
       </div>
 
-      <div class="flex flex-col items-start gap-4">
-        <!-- Botón Create -->
-        <button class="btn-create">
-          <span>
-            <svg
-              height="24"
-              width="24"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path
-                d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
-                fill="currentColor"
-              ></path>
-            </svg>
-            Crear nueva hoja
-          </span>
-        </button>
+      <div class="grid gap-6 md:grid-cols-3">
+        <article
+          class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100"
+        >
+          <h3 class="font-display text-lg font-semibold text-slate-900">
+            ¿Qué es la Psicopedagogía?
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Disciplina que integra psicología y educación para comprender cómo
+            aprenden las personas, detectar barreras y proponer apoyos
+            específicos.
+          </p>
+        </article>
 
-        <p class="text-xs text-slate-500">
-          Por ahora este botón es solo decorativo. En la siguiente fase lo
-          conectamos con un formulario (o base de datos) para subir la hoja en
-          PDF, imagen o plantilla editable.
-        </p>
+        <article
+          class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100"
+        >
+          <h3 class="font-display text-lg font-semibold text-slate-900">
+            Enfoque del glosario
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Cada término está pensado para ser <strong>claro, aplicable</strong>
+            y conectado con situaciones reales del aula, especialmente en
+            educación secundaria.
+          </p>
+        </article>
+
+        <article
+          class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100"
+        >
+          <h3 class="font-display text-lg font-semibold text-slate-900">
+            Libro como herramienta
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            El libro interactivo funciona como un <strong>manual digital</strong>
+            que puede ampliarse con nuevas hojas creadas por docentes según su
+            contexto.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN CONTACTO / REFERENCIAS -->
+  <!-- ONDA CREMA → AZUL -->
+  <div class="meraki-wave meraki-wave-cream-to-blue"></div>
+
+  <!-- BLOQUE AZUL (LIBRO) -->
+  <section
+    id="libro"
+    class="relative z-10 bg-[#cfe7ff] pb-16 pt-14"
+  >
+    <div class="mx-auto max-w-6xl px-4 lg:px-0">
+      <div class="mx-auto mb-10 max-w-3xl text-center">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-600"
+        >
+          Libro interactivo
+        </p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-900">
+          Manual digital de Psicopedagogía Interactiva
+        </h2>
+        <p class="mt-3 text-sm text-slate-700">
+          Aquí viven las páginas en formato imagen (1.jpeg, 2.jpeg, …) organizadas
+          como un <strong>flipbook</strong> navegable. Ya dejamos listo el
+          contenedor para conectar la lógica en JavaScript.
+        </p>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+        <!-- CONTENEDOR DEL LIBRO -->
+        <div
+          class="rounded-[2.5rem] bg-[#fff5e7] p-6 shadow-xl ring-1 ring-slate-100"
+        >
+          <div class="book-container mx-auto max-w-3xl">
+            <div class="book-wrapper" id="flipbook">
+              <div class="book-page left-page" id="leftPage"></div>
+              <div class="book-page right-page" id="rightPage"></div>
+              <div class="flip-element" id="flipPage"></div>
+            </div>
+          </div>
+
+          <div class="mt-6 flex justify-center gap-4">
+            <button
+              class="nav-button"
+              id="prevPage"
+              type="button"
+            >
+              Anterior
+            </button>
+            <button
+              class="nav-button"
+              id="nextPage"
+              type="button"
+            >
+              Siguiente
+            </button>
+          </div>
+        </div>
+
+        <!-- LADO DERECHO: DESCARGA + SHARE -->
+        <div class="space-y-6">
+          <!-- Card descarga -->
+          <div class="download-card">
+            <div class="download-card-text">
+              <span>Manual digital completo</span>
+              <p class="download-card-subtitle">
+                Descarga el PDF con todas las páginas del libro para imprimir o
+                trabajar sin conexión.
+              </p>
+            </div>
+            <div class="download-card-actions">
+              <a class="download-card-btn" href="#">
+                <!-- descarga -->
+                <svg
+                  y="0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0"
+                  width="100"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="xMidYMid meet"
+                  height="100"
+                  class="download-card-icon"
+                >
+                  <path
+                    stroke-width="8"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    fill="none"
+                    d="M31.8,64.5a14.5,14.5,0,0,1-3.2-28.7,17.5,17.5,0,0,1-.4-4,18.2,18.2,0,0,1,36-3.6h.3a18.2,18.2,0,0,1,3.7,36M39.1,75.4,50,86.3m0,0L60.9,75.4M50,86.3V42.7"
+                  ></path>
+                </svg>
+              </a>
+              <a class="download-card-btn" href="#">
+                <!-- link -->
+                <svg class="download-card-icon" viewBox="0 0 20 20">
+                  <path
+                    d="M4.317,16.411c-1.423-1.423-1.423-3.737,0-5.16l8.075-7.984c0.994-0.996,2.613-0.996,3.611,0.001C17,4.264,17,5.884,16.004,6.88l-8.075,7.984c-0.568,0.568-1.493,0.569-2.063-0.001c-0.569-0.569-0.569-1.495,0-2.064L9.93,8.828c0.145-0.141,0.376-0.139,0.517,0.005c0.141,0.144,0.139,0.375-0.006,0.516l-4.062,3.968c-0.282,0.282-0.282,0.745,0.003,1.03c0.285,0.284,0.747,0.284,1.032,0l8.074-7.985c0.711-0.71,0.711-1.868-0.002-2.579c-0.711-0.712-1.867-0.712-2.58,0l-8.074,7.984c-1.137,1.137-1.137,2.988,0.001,4.127c1.14,1.14,2.989,1.14,4.129,0l6.989-6.896c0.143-0.142,0.375-0.14,0.516,0.003c0.143,0.143,0.141,0.374-0.002,0.516l-6.988,6.895C8.054,17.836,5.743,17.836,4.317,16.411"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Botón Share fancy -->
+          <div class="tooltip-container">
+            <div class="button-content">
+              <span class="text">Compartir libro</span>
+              <svg
+                class="share-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"
+                ></path>
+              </svg>
+            </div>
+            <div class="tooltip-content">
+              <div class="social-icons">
+                <!-- icons reales los tienes ya en tu CSS/HTML original -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONDA AZUL → VERDE -->
+  <div class="meraki-wave meraki-wave-blue-to-green"></div>
+
+  <!-- BLOQUE VERDE (COLABORAR) -->
+  <section
+    id="colabora"
+    class="relative z-10 bg-[#ccefd3] pb-16 pt-14"
+  >
+    <div class="mx-auto max-w-6xl px-4 lg:px-0">
+      <div
+        class="grid gap-10 rounded-[2.5rem] bg-white/80 p-8 shadow-xl ring-1 ring-slate-100 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]"
+      >
+        <div>
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-600"
+          >
+            Colaboración docente
+          </p>
+          <h2 class="mt-2 text-3xl font-bold text-slate-900">
+            Agrega nuevas hojas al libro interactivo
+          </h2>
+          <p class="mt-3 text-sm text-slate-700">
+            La idea es que el glosario y el libro sean <strong>vivos</strong>.
+            Cada docente puede proponer nuevas páginas con actividades, ejemplos
+            de casos, rúbricas o adaptaciones curriculares que funcionen en su
+            contexto.
+          </p>
+          <p class="mt-2 text-sm text-slate-700">
+            Más adelante esta sección podrá conectarse con un formulario o una
+            base de datos para subir directamente las hojas y aprobarlas desde
+            la coordinación.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-start gap-4">
+          <button>
+            <span>
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              Crear nueva hoja
+            </span>
+          </button>
+
+          <p class="text-xs text-slate-600">
+            Por ahora este botón es decorativo. En la siguiente fase se conecta
+            a un formulario para subir la hoja en PDF, imagen o plantilla
+            editable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE FINAL REFERENCIAS -->
   <section
     id="contacto"
-    class="bg-gradient-to-r from-meraki-yellow/60 via-meraki-green/45 to-meraki-blue/60 py-16"
+    class="bg-gradient-to-r from-[#ffe7b8] via-[#ffeecd] to-[#ffe7f0] py-16"
   >
     <div
-      class="mx-auto max-w-4xl rounded-3xl bg-white/80 px-6 py-10 shadow-lg"
+      class="mx-auto max-w-4xl rounded-3xl bg-white/90 px-6 py-10 shadow-lg ring-1 ring-slate-100"
     >
       <h2 class="mb-4 text-center text-2xl font-bold text-slate-900">
         Referencias y créditos
@@ -420,26 +366,36 @@ import Layout from '../layouts/Layout.astro';
         Zorrilla, etc.).
       </p>
 
-      <ul class="space-y-1 text-xs text-slate-600">
-        <li>
-          Díaz Barriga, F., &amp; Hernández, G. (2002).
-          <em>Estrategias docentes para un aprendizaje significativo</em>.
-        </li>
-        <li>
-          Juárez, F. (2008). <em>Orientación educativa</em>.
-        </li>
-        <li>
-          Ramos, M. T., &amp; Sánchez, A. (2012).
-          <em>Evaluación psicopedagógica</em>.
-        </li>
-        <li>
-          Secretaría de Educación Pública (2017).
-          <em>Modelo educativo para la educación obligatoria</em>.
-        </li>
-        <li>
-          Zorrilla, M. (2004). <em>Pedagogía: Conceptos fundamentales</em>.
-        </li>
-      </ul>
+      <div class="grid gap-4 md:grid-cols-2">
+        <ul class="space-y-1 text-xs text-slate-600">
+          <li>
+            Díaz Barriga, F., &amp; Hernández, G. (2002).
+            <em> Estrategias docentes para un aprendizaje significativo </em>.
+          </li>
+          <li>
+            Juárez, F. (2008).
+            <em> Orientación educativa </em>.
+          </li>
+          <li>
+            Ramos, M. T., &amp; Sánchez, A. (2012).
+            <em> Evaluación psicopedagógica </em>.
+          </li>
+        </ul>
+        <ul class="space-y-1 text-xs text-slate-600">
+          <li>
+            Secretaría de Educación Pública (2017).
+            <em> Modelo educativo para la educación obligatoria </em>.
+          </li>
+          <li>
+            Zorrilla, M. (2004).
+            <em> Pedagogía: Conceptos fundamentales </em>.
+          </li>
+          <li>
+            Otros recursos digitales y manuales elaborados por la autora del
+            proyecto.
+          </li>
+        </ul>
+      </div>
 
       <div class="mt-6 text-center text-xs text-slate-500">
         Nombre: Luna Juvenal María de Jesús · Carrera: Pedagogía · 7mo
@@ -447,6 +403,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
-  <script src="https://hammerjs.github.io/dist/hammer.min.js" defer></script>
-  <script src="/js/flipbook.js" defer></script>
+
+  <!-- script del flipbook -->
+  <script type="module" src="/js/flipbook.js"></script>
 </Layout>
