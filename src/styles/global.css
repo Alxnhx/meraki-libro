@@ -1386,10 +1386,8 @@ button.learn-more:active::before {
   box-shadow: none;
 }
 /* ===========================
-   Mantenemos el estilo original del Navbar sin cambios en la estructura
+   NAVBAR ROSA FLOANTE (derecha)
    =========================== */
-
-/* Navbar flotante y el diseño de los íconos */
 .meraki-fab {
   display: flex;
   align-items: center;
@@ -1401,7 +1399,6 @@ button.learn-more:active::before {
   box-shadow: 0 12px 30px rgba(255, 0, 120, 0.4);
 }
 
-/* Ajustamos el tamaño de los íconos para pantallas pequeñas */
 .meraki-fab-item {
   position: relative;
   outline: 0;
@@ -1426,7 +1423,6 @@ button.learn-more:active::before {
   justify-content: center;
 }
 
-/* Estilo para la funcionalidad de tooltip */
 .meraki-fab-item::after {
   content: attr(data-label);
   white-space: nowrap;
@@ -1450,53 +1446,27 @@ button.learn-more:active::before {
 }
 
 /* ===========================
-   Sección responsive para pantallas pequeñas
+   TRANSICIONES DE SECCIÓN (ondas)
    =========================== */
-
-@media (max-width: 768px) {
-  /* Aseguramos que el navbar se mantenga en una sola línea en pantallas pequeñas */
-  .flex {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .meraki-fab {
-    display: flex;
-    justify-content: space-evenly; /* Distribuye los íconos para que no se amontonen */
-    gap: 1rem;
-  }
-
-  /* Ajustamos el tamaño de los íconos y botones de navegación */
-  .meraki-fab-item {
-    padding: 0.25rem;
-  }
-
-  /* Ajustamos el tamaño de los íconos */
-  .meraki-fab-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  /* Para que el logo y los elementos de texto no se sobrecarguen en pantallas pequeñas */
-  .leading-tight {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-  }
+.meraki-wave {
+  width: 100%;
+  height: 70px;
 }
 
-/* ===========================
-   Transición para el efecto de tooltip
-   =========================== */
-.meraki-fab-item:hover::after {
-  max-width: 6rem; /* Aseguramos que el tooltip no se corte */
+.meraki-wave-hero {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  background: radial-gradient(circle at 50% 0, #fff5e7 0, #fff5e7 50%, transparent 52%);
 }
 
-/* ===========================
-   Estilo de los botones de navegación (en móvil y PC)
-   =========================== */
+.meraki-wave-cream-to-blue {
+  background: linear-gradient(to bottom, #fff5e7 0, #fff5e7 40%, #cfe7ff 41%);
+}
+
+.meraki-wave-blue-to-green {
+  background: linear-gradient(to bottom, #cfe7ff 0, #cfe7ff 40%, #ccefd3 41%);
+}
 
 .nav-button {
   padding: 0.6rem 1.4rem;
