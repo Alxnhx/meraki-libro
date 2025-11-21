@@ -1726,15 +1726,58 @@ button.learn-more:active::before {
   color: #ffb7ce;
 }
 
-/* Ajustes generales para mantener el diseño consistente */
-@media (max-width: 1024px) {
-	/* No cambiamos la estructura, solo ajustamos el tamaño de los elementos */
-	.nav-pill {
-		display: flex;
-		justify-content: space-between;
-	}
+/* ===========================
+   Mantenemos el estilo original del Navbar y ajustamos solo para móvil
+   =========================== */
 
-	.nav-pill__btn {
-		font-size: 14px; /* Ajustamos el tamaño para que encaje mejor en pantallas pequeñas */
-	}
+/* Sin cambios en la estructura */
+@media (max-width: 1024px) {
+  /* Ajustamos el logo y los textos para que no se desborden en pantallas pequeñas */
+  .nav-pill__btn {
+    font-size: 16px; /* Ajuste en el tamaño de los íconos */
+    padding: 10px; /* Reducción de padding para un mejor ajuste en pantallas pequeñas */
+  }
+
+  /* Ajustamos el contenedor de los botones de navegación */
+  .nav-pill {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Ajustamos el espacio entre los botones */
+    flex-wrap: wrap; /* Permitimos que los botones se ajusten en una fila */
+  }
+
+  .meraki-fab {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .meraki-fab-item {
+    font-size: 18px; /* Ajustamos el tamaño de los íconos en móvil */
+    padding: 8px; /* Ajustamos el padding de los íconos */
+  }
+
+  /* Si es necesario ajustamos el tamaño de los íconos */
+  .meraki-fab-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Si estamos en móvil, no cambiaremos la estructura del navbar, solo ajustamos el tamaño y el espaciado */
+@media (max-width: 768px) {
+  /* Ajustamos el navbar de modo que no se oculte, sino que se ajuste */
+  .flex {
+    display: flex !important; /* Aseguramos que no se oculte el navbar */
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Para el logo y nombre */
+  .leading-tight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
 }
