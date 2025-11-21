@@ -1385,65 +1385,6 @@ button.learn-more:active::before {
   cursor: not-allowed;
   box-shadow: none;
 }
-/* ===========================
-   NAVBAR ROSA FLOANTE (derecha)
-   =========================== */
-.meraki-fab {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  background: linear-gradient(135deg, #ff5fa9, #ff8ad3);
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  box-shadow: 0 12px 30px rgba(255, 0, 120, 0.4);
-}
-
-.meraki-fab-item {
-  position: relative;
-  outline: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  border-radius: 999px;
-  padding: 0.4rem;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  transition: all 0.25s ease;
-}
-
-.meraki-fab-icon {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.meraki-fab-item::after {
-  content: attr(data-label);
-  white-space: nowrap;
-  font-size: 0.75rem;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateX(-6px);
-  max-width: 0;
-  overflow: hidden;
-  transition: all 0.25s ease;
-}
-
-.meraki-fab-item:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.meraki-fab-item:hover::after {
-  opacity: 1;
-  transform: translateX(0);
-  max-width: 6rem;
-}
 
 /* ===========================
    TRANSICIONES DE SECCIÓN (ondas)
