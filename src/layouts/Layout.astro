@@ -164,6 +164,9 @@ const { title = 'Meraki · Pedagogía' } = Astro.props;
         </ul>
       </div>
     </header>
+    <main>
+    <slot />
+    </main>
     <footer class="site-footer mt-20">
   <div class="footer-inner mx-auto max-w-6xl px-4 py-10">
     <section
@@ -308,7 +311,7 @@ const { title = 'Meraki · Pedagogía' } = Astro.props;
 .footer-text {
   font-size: 0.9rem;
   line-height: 1.7;
-  color: #9ca3af;
+  color: #414141ff;
 }
 
 .footer-label {
@@ -342,7 +345,7 @@ const { title = 'Meraki · Pedagogía' } = Astro.props;
 }
 
 .contact-chat {
-  background: var (--meraki-bg);
+  background: var(--meraki-bg);
   border-radius: 1rem;
   padding: 0.85rem;
   display: flex;
