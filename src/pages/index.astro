@@ -190,53 +190,75 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="grid gap-6 md:grid-cols-3">
-        <a
-        href="/detalle/psicopedagogia"
-        class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-md"
-      >
-          <h3 class="font-display text-lg font-semibold text-slate-900">
-            Objetivo general
-          </h3>
-          <p class="mt-2 text-sm text-slate-600">
-            El proyecto propone diseñar un <strong>manual digital colaborativo</strong> para docentes 
-            de secundaria que facilite el uso de <strong>estrategias multisensoriales</strong> para mejorar 
-            la motivación, la participación y el aprendizaje significativo. Se fundamenta 
-            en teorías de Piaget, Vygotsky y Ausubel, que destacan el carácter constructivo, 
-            social y significativo del aprendizaje.
-          </p>
-        </a>
-
-        <a
-        href="/detalle/psicopedagogia"
-        class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-md"
-      >
-          <h3 class="font-display text-lg font-semibold text-slate-900">
-            Propuesta
-          </h3>
-          <p class="mt-2 text-sm text-slate-600">
-            El manual “El aula que se siente, se escucha y se vive” se propone como una herramienta digital 
-            para ayudar a docentes de secundaria a implementar el aprendizaje multisensorial. Busca ofrecer 
-            estrategias más dinámicas y humanas para enfrentar la falta de interés estudiantil, y fomentar 
-            una comunidad docente que comparta ideas y experiencias.
-          </p>
-        </a>
-
-        <a
-        href="/detalle/psicopedagogia"
-        class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-md"
-      >
-          <h3 class="font-display text-lg font-semibold text-slate-900">
-            Teorias
-          </h3>
-          <p class="mt-2 text-sm text-slate-600">
-            <ul>
-            <li> • Jean Piaget – Teoría del Desarrollo Cognitivo.</li>
-            <li> • Lev Vygotsky – Teoría Sociocultural del Aprendizaje.</li>
-            <li> • Idea clave: Aprendemos mejor acompañados y guiados.</li>
-            </ul>
-          </p>
-        </a>
+  <!-- Card 1: Objetivo general -->
+  <a href="/detalle/psicopedagogia" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/2904/2904793.png" alt="Objetivo">
+        <h3 class="font-display text-xl font-semibold text-slate-900">
+          Objetivo general
+        </h3>
       </div>
+      <div class="flip-card-back">
+        <h3 class="font-display text-lg font-semibold text-slate-900 mb-2">
+          Objetivo general
+        </h3>
+        <p class="text-sm text-slate-600">
+          El proyecto propone diseñar un <strong>manual digital colaborativo</strong> para docentes 
+          de secundaria que facilite el uso de <strong>estrategias multisensoriales</strong> para mejorar 
+          la motivación, la participación y el aprendizaje significativo. Se fundamenta 
+          en teorías de Piaget, Vygotsky y Ausubel, que destacan el carácter constructivo, 
+          social y significativo del aprendizaje.
+        </p>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 2: Propuesta -->
+  <a href="/detalle/psicopedagogia" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/3176/3176369.png" alt="Propuesta">
+        <h3 class="font-display text-xl font-semibold text-slate-900">
+          Propuesta
+        </h3>
+      </div>
+      <div class="flip-card-back">
+        <h3 class="font-display text-lg font-semibold text-slate-900 mb-2">
+          Propuesta
+        </h3>
+        <p class="text-sm text-slate-600">
+          El manual "El aula que se siente, se escucha y se vive" se propone como una herramienta digital 
+          para ayudar a docentes de secundaria a implementar el aprendizaje multisensorial. Busca ofrecer 
+          estrategias más dinámicas y humanas para enfrentar la falta de interés estudiantil, y fomentar 
+          una comunidad docente que comparta ideas y experiencias.
+        </p>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 3: Teorías -->
+  <a href="/detalle/psicopedagogia" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Teorías">
+        <h3 class="font-display text-xl font-semibold text-slate-900">
+          Teorías
+        </h3>
+      </div>
+      <div class="flip-card-back">
+        <h3 class="font-display text-lg font-semibold text-slate-900 mb-2">
+          Teorías
+        </h3>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>• Jean Piaget – Teoría del Desarrollo Cognitivo.</li>
+          <li>• Lev Vygotsky – Teoría Sociocultural del Aprendizaje.</li>
+          <li>• Idea clave: Aprendemos mejor acompañados y guiados.</li>
+        </ul>
+      </div>
+    </div>
+  </a>
+</div>
     </div>
   </section>
 
