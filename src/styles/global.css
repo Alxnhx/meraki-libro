@@ -1042,6 +1042,111 @@ button.learn-more:active::before {
       }
     }
 
+    /* Responsive mejorado */
+@media (max-width: 768px) {
+  .tooltip-content {
+    min-width: 300px;
+    padding: 20px 15px;
+  }
+  
+  .tooltip-title {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  
+  .social-icons {
+    gap: 12px;
+  }
+  
+  .social-icon {
+    padding: 16px 10px;
+  }
+  
+  .social-icon-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .social-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .social-icon-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tooltip-content {
+    min-width: calc(100vw - 40px); /* Ocupa casi todo el ancho de la pantalla */
+    max-width: 340px; /* Pero no más de 340px */
+    padding: 20px 16px;
+    left: 50%;
+    right: auto;
+  }
+  
+  .tooltip-title {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  
+  .social-icons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  
+  .social-icon {
+    padding: 18px 8px; /* Más alto */
+    border-radius: 12px;
+  }
+  
+  .social-icon-wrapper {
+    width: 48px; /* Más grande */
+    height: 48px;
+  }
+  
+  .social-icon svg {
+    width: 24px; /* Iconos más grandes */
+    height: 24px;
+  }
+  
+  .social-icon-text {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 360px) {
+  .tooltip-content {
+    min-width: calc(100vw - 30px);
+    max-width: 330px;
+    padding: 18px 14px;
+  }
+  
+  .social-icons {
+    gap: 12px;
+  }
+  
+  .social-icon {
+    padding: 16px 6px;
+  }
+  
+  .social-icon-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .social-icon-text {
+    font-size: 12px;
+  }
+}
+
 
 /* ===========================
    ESTILOS PARA EL LIBRO (flipbook)
