@@ -2090,7 +2090,6 @@ button.learn-more:active::before {
 /* ===========================
    LIBRO RESPONSIVO MÓVIL
    =========================== */
-
 /* Tablet y móvil grande */
 @media (max-width: 1024px) {
   .book-container {
@@ -2109,12 +2108,14 @@ button.learn-more:active::before {
     width: 100%;
     max-width: 100%;
     height: auto;
-    padding: 0 1rem;
+    padding: 0 0.5rem; /* Reducido de 1rem a 0.5rem */
   }
   
   .book-wrapper {
     padding-top: 75%;
     border-radius: 16px;
+    /* Gradient más delgado en los bordes */
+    background: linear-gradient(to right, #e6e0d4, #fef9f2 8%, #fef9f2 92%, #e6e0d4);
   }
   
   .book-page {
@@ -2142,6 +2143,12 @@ button.learn-more:active::before {
     background-size: cover;
   }
   
+  /* Sombra central más delgada */
+  .book-wrapper::after {
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02));
+  }
+  
   /* Botones más pequeños en móvil */
   .nav-button {
     padding: 0.5rem 1.2rem;
@@ -2152,13 +2159,15 @@ button.learn-more:active::before {
 /* Móvil pequeño */
 @media (max-width: 480px) {
   .book-container {
-    padding: 0 0.5rem;
+    padding: 0 0.25rem; /* Casi sin padding para aprovechar espacio */
   }
   
   .book-wrapper {
     padding-top: 85%;
     border-radius: 12px;
     box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+    /* Bordes aún más delgados */
+    background: linear-gradient(to right, #e6e0d4, #fef9f2 5%, #fef9f2 95%, #e6e0d4);
   }
   
   .book-page {
@@ -2180,17 +2189,24 @@ button.learn-more:active::before {
     letter-spacing: 0.05em;
   }
   
-  /* Reducir sombra central */
+  /* Sombra central mínima */
   .book-wrapper::after {
-    width: 1px;
+    width: 0.5px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01));
   }
 }
 
 /* Móvil muy pequeño */
 @media (max-width: 360px) {
+  .book-container {
+    padding: 0 0.15rem; /* Padding mínimo */
+  }
+  
   .book-wrapper {
     padding-top: 95%;
     border-radius: 10px;
+    /* Bordes casi invisibles */
+    background: linear-gradient(to right, #e6e0d4, #fef9f2 3%, #fef9f2 97%, #e6e0d4);
   }
   
   .book-page,
@@ -2206,6 +2222,12 @@ button.learn-more:active::before {
   .nav-button {
     padding: 0.35rem 0.8rem;
     font-size: 0.65rem;
+  }
+  
+  /* Sombra casi invisible */
+  .book-wrapper::after {
+    width: 0.5px;
+    opacity: 0.5;
   }
 }
 
@@ -2230,10 +2252,7 @@ button.learn-more:active::before {
   }
   
   .book-container {
-    max-width: 600px;
+    max-width: 650px;
+    padding: 0 0.5rem;
   }
 }
-
-#libro .grid {
-    grid-template-columns: 1fr !important;
-    }
