@@ -1004,125 +1004,43 @@ button.learn-more:active::before {
       animation: pulse 3s infinite;
     }
 
-    @media (max-width: 768px) {
-  .button-content {
-    padding: 12px 24px;
-  }
-  
-  .button-content .text {
-    font-size: 16px;
-  }
-  
-  .tooltip-content {
-    min-width: 260px;
-    padding: 18px;
-  }
-  
-  .social-icons {
-    gap: 10px;
-  }
-  
-  .social-icon {
-    padding: 14px 10px;
-  }
-  
-  .social-icon-wrapper {
-    width: 38px;
-    height: 38px;
-  }
-  
-  .social-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-}
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      .tooltip-content {
+        background: rgba(30, 30, 30, 0.95);
+        backdrop-filter: blur(10px);
+      }
+      .tooltip-content::before {
+        border-color: transparent transparent rgba(30, 30, 30, 0.95) transparent;
+      }
+      .tooltip-title {
+        color: #e0e0e0;
+      }
+      .social-icon {
+        background: #2a2a2a;
+      }
+    }
 
-/* 3. Responsive para móviles pequeños */
-@media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
-  
-  .button-content {
-    padding: 10px 20px;
-  }
-  
-  .button-content .text {
-    font-size: 14px;
-    margin-right: 8px;
-  }
-  
-  .share-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .tooltip-content {
-    min-width: 240px;
-    padding: 15px;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%) scale(0.8);
-  }
-  
-  .tooltip-container:hover .tooltip-content {
-    transform: translateX(-50%) scale(1);
-  }
-  
-  .tooltip-title {
-    font-size: 13px;
-    margin-bottom: 12px;
-  }
-  
-  .social-icons {
-    grid-template-columns: repeat(3, 1fr); /* Mantiene 3 columnas pero más compactas */
-    gap: 8px;
-  }
-  
-  .social-icon {
-    padding: 12px 6px;
-  }
-  
-  .social-icon-wrapper {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .social-icon svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .social-icon-text {
-    font-size: 10px;
-  }
-}
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
 
-/* 4. Para pantallas MUY pequeñas (opcional) */
-@media (max-width: 360px) {
-  .tooltip-content {
-    min-width: 200px;
-    padding: 12px;
-  }
-  
-  .social-icons {
-    gap: 6px;
-  }
-  
-  .social-icon {
-    padding: 10px 4px;
-  }
-  
-  .social-icon-wrapper {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .social-icon-text {
-    font-size: 9px;
-  }
-}
-
+    /* Responsive */
+    @media (max-width: 480px) {
+      .tooltip-content {
+        min-width: 240px;
+      }
+      .social-icons {
+        gap: 10px;
+      }
+      .social-icon {
+        padding: 12px 8px;
+      }
+    }
 
 
 /* ===========================
