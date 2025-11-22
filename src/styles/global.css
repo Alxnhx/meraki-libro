@@ -1045,8 +1045,8 @@ button.learn-more:active::before {
     /* Responsive mejorado - MÁS ALTO */
 @media (max-width: 768px) {
   .tooltip-content {
-    min-width: 220px;
-    max-width: 250px;;
+    min-width: 320px;
+    max-width: 350px;
     padding: 20px 16px;
   }
   
@@ -1085,8 +1085,8 @@ button.learn-more:active::before {
 
 @media (max-width: 480px) {
   .tooltip-content {
-    min-width: 200px;
-    max-width: 240px; /* Angosto */
+    min-width: 300px;
+    max-width: 340px; /* Angosto */
     padding: 18px 14px;
   }
   
@@ -1126,8 +1126,8 @@ button.learn-more:active::before {
 
 @media (max-width: 360px) {
   .tooltip-content {
-    min-width: 180px;
-    max-width: 220px;
+    min-width: 280px;
+    max-width: 320px;
   }
   
   .social-icon {
