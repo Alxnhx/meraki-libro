@@ -1028,48 +1028,83 @@ button.learn-more:active::before {
         transition: none !important;
       }
     }
-
-    /* Responsive */
-    @media (max-width: 480px) {
-      .tooltip-content {
-        min-width: 240px;
-      }
-      .social-icons {
-        gap: 10px;
-      }
-      .social-icon {
-        padding: 12px 8px;
-      }
-    }
-
-    /* Responsive mejorado - MÁS ALTO */
+/* Responsive mejorado - MÁS ALTO Y ANCHO */
 @media (max-width: 768px) {
   .tooltip-content {
-    min-width: 320px;
-    max-width: 350px;
-    padding: 20px 16px;
+    min-width: 360px;
+    max-width: 400px;
+    min-height: 480px; /* Altura mínima para que se vea todo */
+    padding: 24px 20px;
+    max-height: 90vh; /* No excede el 90% de la pantalla */
+    overflow-y: auto; /* Scroll si el contenido es muy largo */
   }
   
   .tooltip-title {
-    font-size: 15px;
-    margin-bottom: 16px;
+    font-size: 16px;
+    margin-bottom: 20px;
   }
   
   .social-icons {
     grid-template-columns: 1fr; /* UNA COLUMNA - las redes en vertical */
+    gap: 14px;
+  }
+  
+  .social-icon {
+    padding: 16px 18px;
+    flex-direction: row; /* Icono y texto en horizontal */
+    justify-content: flex-start;
+    gap: 14px;
+    min-height: 60px; /* Altura mínima para cada botón */
+  }
+  
+  .social-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  
+  .social-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .social-icon-text {
+    font-size: 15px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .tooltip-content {
+    min-width: 340px;
+    max-width: 380px;
+    min-height: 460px; /* Alto suficiente */
+    padding: 22px 18px;
+    max-height: 85vh;
+  }
+  
+  .tooltip-title {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  
+  .social-icons {
+    grid-template-columns: 1fr; /* UNA COLUMNA */
     gap: 12px;
   }
   
   .social-icon {
     padding: 14px 16px;
-    flex-direction: row; /* Icono y texto en horizontal */
+    flex-direction: row; /* Icono a la izquierda, texto a la derecha */
     justify-content: flex-start;
     gap: 12px;
+    min-height: 56px;
   }
   
   .social-icon-wrapper {
     width: 44px;
     height: 44px;
+    flex-shrink: 0; /* No se encoge */
   }
   
   .social-icon svg {
@@ -1083,60 +1118,27 @@ button.learn-more:active::before {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .tooltip-content {
     min-width: 300px;
-    max-width: 340px; /* Angosto */
-    padding: 18px 14px;
-  }
-  
-  .tooltip-title {
-    font-size: 14px;
-    margin-bottom: 14px;
-  }
-  
-  .social-icons {
-    grid-template-columns: 1fr; /* UNA COLUMNA */
-    gap: 10px;
+    max-width: 340px;
+    min-height: 440px;
+    padding: 20px 16px;
   }
   
   .social-icon {
     padding: 12px 14px;
-    flex-direction: row; /* Icono a la izquierda, texto a la derecha */
-    justify-content: flex-start;
-    gap: 12px;
+    min-height: 52px;
   }
   
   .social-icon-wrapper {
-    width: 42px;
-    height: 42px;
-    flex-shrink: 0; /* No se encoge */
+    width: 40px;
+    height: 40px;
   }
   
   .social-icon svg {
     width: 20px;
     height: 20px;
-  }
-  
-  .social-icon-text {
-    font-size: 13px;
-    text-align: left;
-  }
-}
-
-@media (max-width: 360px) {
-  .tooltip-content {
-    min-width: 280px;
-    max-width: 320px;
-  }
-  
-  .social-icon {
-    padding: 10px 12px;
-  }
-  
-  .social-icon-wrapper {
-    width: 38px;
-    height: 38px;
   }
 }
 
